@@ -1,2 +1,0 @@
-# MNTB OJT
-

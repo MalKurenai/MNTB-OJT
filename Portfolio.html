@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Barroso_Online Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="portfolio_style.css">
+    </head>
+    <body>
+        <canvas id="matrix-canvas"></canvas>
+        <div class="crt-overlay"></div>
+        <div id="glitch-overlay"></div>
+
+        <div id="boot-overlay" class="boot-screen">
+            <div class="login-box">
+                <h2 class="glitch-text" data-text="SYSTEM_ACCESS_v4.0">SYSTEM_ACCESS_v4.0</h2>
+                <div class="input-group">
+                    <label>> ADMIN_ID:</label>
+                    <input type="text" placeholder="enter credentials...">
+                </div>
+
+                <div class="input-group">
+                    <label>> ACCESS_CODE:</label>
+                    <input type="password" placeholder="********">
+                </div>
+                <button id="login-trigger" class="btn">INITIALIZE_BOOT</button>
+                <div id="boot-loader" class="hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p id="boot-status">MOUNTING_DRIVES...</p>
+                </div>
+            </div>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <div class="progress-container">
+                <div class="progress-bar-fill" id="scrollBar"></div>
+            </div>
+                <div class="nav-logo" id="systemReboot" title="REBOOT_SYSTEM">
+                <img src="Portfolio images/Self-Logo.png" alt="System Logo" class="logo-img">
+            </div>
+            <div class="nav-container">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home-sec" class="nav-btn">HOME</a>
+                    <a href="#about-sec" class="nav-btn">ABOUT</a>
+                    <a href="#projects-sec" class="nav-btn">PROJECTS</a>
+                    <a href="#services-sec" class="nav-btn">SERVICES</a>
+                    <a href="#contact-sec" class="nav-btn">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+        <div id="main-content">
+            <section id="home-sec" class="content-section">
+                <header>
+                    <h1 id="terminal-text"></h1>
+                    <p class="subtitle">System ready. Awaiting user input...</p>
+                </header>
+            </section>
+
+            <section id="about-sec" class="content-section">
+                <div id="about" class="window">
+                    <div class="title-bar">
+                        <div class="title-text">about_me.sys</div>
+                        <div class="controls">
+                            <span class="close-btn" onclick="closeWindow('about')">X</span>
+                        </div>
+                    </div>
+                    <div class="content about-layout">
+                        <div class="profile-frame">
+                            <img src="Portfolio images/profile.png" alt="Operator_Profile" class="pfp-glitch">
+                            <div class="frame-overlay"></div>
+                        </div>
+
+                        <div class="bio-text">
+                            <p>> I am a 4th year IT student specializing in Graphic Design and Database Management.</p>
+                            <p>> Building high-performance aesthetic interfaces with a retro-hacker vibe.</p>
+                            <p>> Creating unique designs and animations with a personal touch.</p>
+                            <p>> Managing important data with precision and security.</p>
+                            <p>> Current Status: <span style="color: #00ff00;">ONLINE</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects-sec" class="content-section">
+                <div id="projects" class="window">
+                    <div class="title-bar">
+                        <div class="title-text">projects_vault.exe</div>
+                        <div class="controls"><span class="close-btn" onclick="closeWindow('projects')">X</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="project-grid">
+                            
+                            <div class="project-card">
+                                <div class="project-info">
+                                    <span class="glitch-text" data-text="LIBRARY_SYSTEM">LIBRARY_SYSTEM</span>
+                                </div>
+                                <button class="btn-open-view" data-target="vid-system">INITIALIZE_PLAY</button>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-info">
+                                    <span class="glitch-text" data-text="NEON_SHELL_V1">NEON_SHELL_V1</span>
+                                </div>
+                                <button class="btn-open-view" data-target="vid-terminal-portfolio">SOURCE_CODE_ROOT</button>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-info">
+                                    <span class="glitch-text" data-text="HARDWARE_UPLINK">HARDWARE_UPLINK</span>
+                                </div>
+                                <button class="btn-open-view" data-target="img-hardware-uplink">HARDWARE_SPECS</button>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-info">
+                                    <span class="glitch-text" data-text="ANIMATION_SAMPLE">ANIMATION_SAMPLE</span>
+                                </div>
+                                <button class="btn-open-view" data-target="vid-animation">ANIMATION_THUMBNAIL</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services-sec" class="content-section">
+                <div id="services" class="window">
+                    <div class="title-bar">
+                        <div class="title-text">services.cfg</div>
+                        <div class="controls">
+                            <span>_</span>
+                            <span class="close-btn" onclick="closeWindow('services')">X</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>> [01] SYSTEM_DEVELOPMENT</p>
+                        <p>> [02] GRAPHIC DESIGNING</p>
+                        <p>> [03] DIGITAL ARTIST</p>
+                        <p>> [04] POWERPOINT PRESENTATION MAKING</p>
+                        <p>> [05] DOCUMENT FORMATTING</p>
+                        <p>> [06] VIDEO EDITING</p>
+                        <p>> [07] ANIMATING</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact-sec" class="content-section">
+                <div id="contact" class="window">
+                    <div class="title-bar">
+                        <div class="title-text">comms_channel.bin</div>
+                        <div class="controls">
+                            <span>_</span>
+                            <span class="close-btn" onclick="closeWindow('contact')">X</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <form id="contact-form" action="https://formspree.io/f/mlgwqlgb" method="POST">
+                            <div class="input-group">
+                                <label>> SENDER_ID:</label>
+                                <input type="text" name="name" placeholder="Enter identification..." required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>> RETURN_PATH:</label>
+                                <input type="email" name="email" placeholder="user@terminal.net" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>> MESSAGE_DATA:</label>
+                                <textarea name="message" placeholder="Type transmission content here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn" id="send-btn" style="width: 100%; margin-top: 10px;">
+                                INITIALIZE_TRANSMISSION
+                            </button>
+                        </form>
+                        <p id="form-status" style="margin-top: 10px; font-size: 0.8rem;"></p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <footer id="system-footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <p class="footer-label">DESIGNATION</p>
+                    <p>Maryll Nezeriah T. Barroso</p>
+                    <p>matheawesome@gmail.com</p>
+                    <p>&copy; 2026 // ALL_RIGHTS_RESERVED</p>
+                </div>
+
+                <div class="footer-section">
+                    <p class="footer-label">EXTERNAL_PORTS</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/maryll.barroso" target="_blank">[ FACEBOOK ]</a>
+                        <a href="https://instagram.com/maltheawesome27" target="_blank">[ INSTAGRAM ]</a>
+                        <a href="https://x.com/mal_barroso" target="_blank">[ X_COM ]</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <p class="footer-label">CORE_STATUS</p>
+                    <p>OS: NEON_V1.1</p>
+                    <p>UPTIME: <span id="uptime-counter">00:00:00</span></p>
+                </div>
+            </div>
+        </footer>
+        <div id="systemViewer" class="system-modal">
+            <div class="title-bar">
+                <div id="viewerTitle" class="title-text">VIEW_SESSION.exe</div>
+                <div class="controls">
+                    <span class="close-viewer">X</span>
+                </div>
+            </div>
+            <div class="viewer-content">
+                <img id="viewerImage" src="" alt="View_Data">
+                <video id="viewerVideo" controls muted loop>
+                    <source src="" type="video/mp4">
+                    ERR: UPLINK_FAILURE.
+                </video>
+            </div>
+        </div>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const bootOverlay = document.getElementById('boot-overlay');
+                
+                // 1. Check Flags
+                const isRebooting = localStorage.getItem('rebooting');
+                const sessionActive = sessionStorage.getItem('session_active'); 
+
+                if (isRebooting === 'true') {
+                    handleRebootSequence(bootOverlay);
+                } else if (!sessionActive) {
+                    initializeLoginLogic();
+                } else {
+                    if (bootOverlay) bootOverlay.remove();
+                }
+
+                // --- UNIFIED NAV BUTTON LOGIC ---
+                const navLinks = document.querySelectorAll('.nav-btn');
+                const menu = document.querySelector('#mobile-menu');
+                const menuLinks = document.querySelector('.nav-links');
+                let glitch = document.getElementById('glitch-overlay');
+
+                if (!glitch) {
+                    glitch = document.createElement('div');
+                    glitch.id = 'glitch-overlay';
+                    glitch.className = 'glitch-overlay';
+                    document.body.appendChild(glitch);
+                }
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        console.log(`[SYS]: RE-ROUTING_TO_${targetId.toUpperCase()}`);
+
+                        // TRIGGER SNAPPY GLITCH (600ms)
+                        glitch.classList.remove('trigger-glitch');
+                        void glitch.offsetWidth; 
+                        glitch.classList.add('trigger-glitch');
+                        
+                        // Clear the glitch class after the animation ends
+                        setTimeout(() => {
+                            glitch.classList.remove('trigger-glitch');
+                        }, 600);
+
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center' 
+                            });
+                        }
+
+                        if (menuLinks && menu) {
+                            menuLinks.classList.remove('active');
+                            menu.classList.remove('is-active');
+                        }
+
+                        const windowName = targetId.split('-')[0];
+                        if (typeof revealWindow === "function") revealWindow(windowName);
+                    });
+                });
+            });
+
+            // LOGIC A: Login Sequence
+            function initializeLoginLogic() {
+                const loginBtn = document.getElementById('login-trigger');
+                if (!loginBtn) return;
+
+                loginBtn.addEventListener('click', () => {
+                    const bootLoader = document.getElementById('boot-loader');
+                    const progressFill = document.querySelector('.progress-fill');
+                    
+                    loginBtn.style.display = 'none';
+                    document.querySelectorAll('.input-container').forEach(el => el.style.display = 'none');
+                    bootLoader.classList.remove('hidden');
+
+                    let progress = 0;
+                    const interval = setInterval(() => {
+                        progress += Math.random() * 20;
+                        if (progress >= 100) {
+                            progress = 100;
+                            clearInterval(interval);
+                            sessionStorage.setItem('session_active', 'true');
+                            setTimeout(() => { document.getElementById('boot-overlay').remove(); }, 500);
+                        }
+                        progressFill.style.width = progress + '%';
+                    }, 300);
+                });
+            }
+
+            // LOGIC B: Reboot Sequence (Deep Glitch)
+            function handleRebootSequence(overlay) {
+                if (!overlay) return;
+                window.scrollTo(0, 0);
+                overlay.classList.add('active-glitch');
+                overlay.innerHTML = '<div class="reboot-text">SYSTEM_REBOOT_IN_PROGRESS...</div>';
+
+                setTimeout(() => {
+                    overlay.remove();
+                    localStorage.removeItem('rebooting');
+                    console.log("SYS: REBOOT_COMPLETE.");
+                }, 1200);
+            }
+
+            // --- MATRIX RAIN ---
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^";
+            const fontSize = 16;
+            let columns = canvas.width / fontSize;
+            let drops = Array(Math.floor(columns)).fill(1);
+            let matrixColor = "#bc13fe";
+
+            function drawMatrix() {
+                ctx.fillStyle = "rgba(15, 5, 29, 0.05)"; 
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = matrixColor; 
+                
+                ctx.font = fontSize + "px VT323";
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                columns = canvas.width / fontSize;
+                drops = Array(Math.floor(columns)).fill(1);
+            });
+
+            setInterval(drawMatrix, 50);
+
+            // --- TYPING EFFECT ---
+            const text = "> SYSTEM_OPERATOR: Maryll Nezeriah T. Barroso";
+            const speed = 100; 
+            let i = 0;
+
+            function typeWriter() {
+                if (i < text.length) {
+                    const term = document.getElementById("terminal-text");
+                    if(term) term.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            window.onload = typeWriter;
+
+            // --- REBOOT BUTTON ---
+            const rebootBtn = document.getElementById('systemReboot');
+            if (rebootBtn) {
+                rebootBtn.addEventListener('click', () => {
+                    localStorage.setItem('rebooting', 'true');
+                    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+                    window.location.hash = 'home';
+                    location.reload();
+                });
+            }
+
+            (function handleReboot() {
+                if (localStorage.getItem('rebooting') === 'true') {
+                    window.scrollTo(0, 0);
+                    const overlay = document.createElement('div');
+                    overlay.className = 'glitch-overlay active-glitch';
+                    overlay.innerHTML = '<div class="reboot-text">SYSTEM_REBOOT_IN_PROGRESS...</div>';
+                    document.body.appendChild(overlay);
+
+                    window.addEventListener('load', () => {
+                        window.scrollTo(0, 0); 
+                        setTimeout(() => {
+                            overlay.remove();
+                            localStorage.removeItem('rebooting');
+                            if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+                        }, 1200);
+                    });
+                }
+            })();
+
+            // --- UPDATED SCROLL & NAVBAR LOGIC ---
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('navbar');
+                const scrollBar = document.getElementById("scrollBar");
+                const sections = document.querySelectorAll('.content-section');
+                const navLinks = document.querySelectorAll('.nav-btn');
+                
+                const scrollY = window.scrollY;
+                const aboutSection = document.getElementById('about');
+                const contactSection = document.getElementById('contact');
+
+                if (nav && aboutSection && contactSection) {
+                    const aboutOffset = aboutSection.offsetTop;
+                    const contactOffset = contactSection.offsetTop;
+
+                    // STAGE 1: Home to About (Transparent -> Purple)
+                    if (scrollY < aboutOffset) {
+                        const opacity = Math.min(scrollY / (aboutOffset * 0.8), 1);
+                        nav.style.background = `rgba(15, 5, 29, ${opacity})`; 
+                        matrixColor = "#bc13fe"; 
+                    } 
+                    // STAGE 2: About to Contact (Purple -> Black)
+                    else if (scrollY >= aboutOffset && scrollY < contactOffset) {
+                        const diff = contactOffset - aboutOffset;
+                        const progress = Math.min((scrollY - aboutOffset) / diff, 1);
+                        
+                        // Interpolate Purple (188, 19, 254) to Black (0, 0, 0)
+                        const r = Math.floor(188 * (1 - progress));
+                        const g = Math.floor(19 * (1 - progress));
+                        const b = Math.floor(254 * (1 - progress));
+                        
+                        nav.style.background = `rgb(${r}, ${g}, ${b})`;
+                        matrixColor = `rgba(100, 100, 100, ${0.3 + (progress * 0.2)})`;
+                    } 
+                    // STAGE 3: Contact & Footer (Solid Black)
+                    else {
+                        nav.style.background = "#000000";
+                    }
+                }
+
+                // Progress Bar Update
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                if (scrollBar) scrollBar.style.width = scrolled + "%";
+                
+                // Active Section Highlighting
+                const offsetThreshold = window.innerWidth < 768 ? 100 : 200;
+                let currentSectionId = "";
+
+                sections.forEach(section => {
+                    if (scrollY >= (section.offsetTop - offsetThreshold)) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const targetId = link.getAttribute('href').split('#')[1];
+                    if (targetId === currentSectionId) link.classList.add('active');
+                });
+            });
+
+            const menuBtn = document.querySelector('#mobile-menu');
+            if (menuBtn) {
+                menuBtn.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('active');
+                    this.classList.toggle('is-active');
+                });
+            }
+
+            // --- WINDOW CONTROL ---
+            function closeWindow(id) {
+                const win = document.getElementById(id);
+                if(!win) return;
+                win.style.opacity = 1;
+                let op = 1;
+                let timer = setInterval(function () {
+                    if (op <= 0.1) {
+                        clearInterval(timer);
+                        win.classList.add('hidden');
+                        document.getElementById('home-sec').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        logAction(`SYS: ${id.toUpperCase()} CLOSED. RETURNING TO ROOT.`);
+                    }
+                    win.style.opacity = op;
+                    op -= 0.1;
+                }, 20);
+            }
+
+            function revealWindow(id) {
+                const win = document.getElementById(id);
+                if (!win) return;
+                win.classList.remove('hidden');
+                win.style.opacity = 0;
+                let op = 0;
+                let timer = setInterval(function () {
+                    if (op >= 1) clearInterval(timer);
+                    win.style.opacity = op;
+                    op += 0.1;
+                }, 30);
+            }
+
+            const logAction = (msg) => console.log(`[TERMINAL]: ${msg}`);
+
+            // --- SYSTEM_VIEWER ---
+            const viewerModal = document.getElementById("systemViewer");
+            const viewerTitle = document.getElementById("viewerTitle");
+            const viewerImage = document.getElementById("viewerImage");
+            const viewerVideo = document.getElementById("viewerVideo");
+            const closeViewerBtn = document.querySelector(".close-viewer");
+
+            const mediaAssets = {
+                "vid-system": { type: "video", src: "Portfolio images/Library_Catalogue.mp4", title: "LIBRARY_SYSTEM_PLAY" },
+                "vid-terminal-portfolio": { type: "video", src: "Portfolio images/Neon_Shell.mp4", title: "PORTFOLIO_ROOT_DATA" },
+                "img-hardware-uplink": { type: "image", src: "Portfolio images/arduino-thumb.jpg", title: "HARDWARE_SPECS_RECON" },
+                "vid-animation": { type: "video", src: "Portfolio images/short-animation.mp4", title: "ANIMATION_THUMBNAIL_PLAY" }
+            };
+
+            document.querySelectorAll(".btn-open-view").forEach(button => {
+                button.addEventListener("click", () => {
+                    const targetId = button.getAttribute("data-target");
+                    const asset = mediaAssets[targetId];
+                    if (!viewerImage || !viewerVideo || !viewerModal) return;
+                    
+                    viewerImage.style.display = "none";
+                    viewerVideo.style.display = "none";
+                    viewerVideo.pause();
+
+                    if (asset) {
+                        viewerTitle.innerText = `${asset.title}.exe`;
+                        if (asset.type === "image") {
+                            viewerImage.src = asset.src;
+                            viewerImage.style.display = "block";
+                        } else if (asset.type === "video") {
+                            viewerVideo.src = asset.src;
+                            viewerVideo.style.display = "block";
+                            viewerVideo.load();
+                            viewerVideo.play();
+                        }
+                        viewerModal.style.display = "block";
+                    }
+                });
+            });
+
+            if (closeViewerBtn) {
+                closeViewerBtn.addEventListener("click", () => {
+                    viewerModal.style.display = "none";
+                    viewerVideo.pause();
+                });
+            }
+
+            // --- CONTACT FORM ---
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener("submit", async function(event) {
+                    event.preventDefault();
+                    const sendBtn = document.getElementById('send-btn');
+                    const statusMsg = document.getElementById('form-status');
+                    sendBtn.innerText = "UPLINKING...";
+                    
+                    fetch(event.target.action, {
+                        method: contactForm.method,
+                        body: new FormData(event.target),
+                        headers: { 'Accept': 'application/json' }
+                    }).then(response => {
+                        if (response.ok) {
+                            statusMsg.innerHTML = "> SUCCESS: TRANSMISSION LOGGED.";
+                            statusMsg.style.color = "#00ff00";
+                            contactForm.reset();
+                            sendBtn.innerText = "SIGNAL_SENT";
+                        } else {
+                            statusMsg.innerHTML = "> ERROR: UPLINK TIMEOUT.";
+                            sendBtn.innerText = "RETRY_SIGNAL";
+                        }
+                    }).catch(() => {
+                        statusMsg.innerHTML = "> ERROR: CONNECTION_LOST.";
+                    });
+                });
+            }
+
+            // --- UPTIME ---
+            let seconds = 0;
+            function updateUptime() {
+                seconds++;
+                const hrs = Math.floor(seconds / 3600).toString().padStart(2, '0');
+                const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                const counter = document.getElementById('uptime-counter');
+                if (counter) counter.innerText = `${hrs}:${mins}:${secs}`;
+            }
+            setInterval(updateUptime, 1000);
+        </script>
+    </body>
+</html>
