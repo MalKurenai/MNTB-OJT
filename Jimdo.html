@@ -49,7 +49,7 @@
         <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-300 px-4 md:px-8 py-4 md:py-6 flex justify-between items-center bg-transparent">
             <div class="flex items-center space-x-4 lg:space-x-12">
                 <a href="#hero">
-                    <div class="jimdo-logo font-black text-xl md:text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
+                    <div class="jimdo-logo font-black text-2xl md:text-3xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
                 </a>
                 
                 <div class="hidden lg:flex items-center space-x-8 font-bold text-[15px]">
@@ -248,27 +248,41 @@
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="font-bold text-[15px] text-gray-700 hover:text-black transition-colors">Log In</a>
-                    <button class="bg-black text-white px-6 py-2.5 rounded-full font-bold text-[15px] hover:bg-gray-800 transition-all hidden md:block">
-                        Sign up
-                    </button>
-                    <button id="mobile-toggle" class="lg:hidden text-2xl focus:outline-none relative z-[110]">
-                        <i class="fa-solid fa-bars"></i>
+                    <a href="#" class="font-bold text-[15px] text-gray-700 hover:text-black transition-colors">
+                        <span class="lg:hidden">Sign up</span>
+                        <span class="hidden lg:inline">Log In</span>
+                    </a>
+                    <button id="mobile-toggle" onclick="toggleMenu()" class="lg:hidden text-2xl focus:outline-none relative z-[110]">
+                        <i id="menu-icon" class="fa-solid fa-bars"></i>
                     </button>
                 </div>
 
-            <div id="mobile-menu" class="fixed inset-0 bg-white z-[105] translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 h-screen overflow-y-auto">
-                
+            <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/40 z-[998] hidden opacity-0 transition-opacity duration-300"></div>
+
+            <div id="mobile-menu" style="left: 0;" class="fixed top-0 left-0 w-full bg-white z-[999] -translate-x-full left-[-1px] transition-transform duration-300 lg:hidden flex flex-col pt-8 h-screen overflow-y-auto shadow-2xl">
+                <div class="px-8 mb-10 flex justify-between items-center">
+                    <a href="#hero" onclick="toggleMenu()">
+                        <div class="jimdo-logo inline-block font-black text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
+                    </a>
+                    <button onclick="toggleMenu()" class="text-3xl text-gray-800 focus:outline-none">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
                 <div id="mobile-main-links" class="flex flex-col space-y-6 text-2xl font-bold text-[#002d62] px-8 transition-all duration-300">
-                    <button onclick="openSubmenu('website')" class="flex justify-between items-center w-full">Website <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    <button onclick="openSubmenu('store')" class="flex justify-between items-center w-full">Online Store <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    <button onclick="openSubmenu('tools')" class="flex justify-between items-center w-full">Business-Tools <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('website')" class="flex justify-between items-center w-full text-left">Website <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('store')" class="flex justify-between items-center w-full text-left">Online Store <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('tools')" class="flex justify-between items-center w-full text-left">Business-Tools <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    
                     <a href="#">Community</a>
-                    <button onclick="openSubmenu('knowledge')" class="flex justify-between items-center w-full">Knowledge Guide <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    <button onclick="openSubmenu('help')" class="flex justify-between items-center w-full">Help <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    
+                    <div class="py-2"></div> 
+
+                    <button onclick="openSubmenu('knowledge')" class="flex justify-between items-center w-full text-left">Knowledge Guide <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('help')" class="flex justify-between items-center w-full text-left">Help <i class="fa-solid fa-chevron-right text-sm"></i></button>
                 </div>
 
-                <div id="submenu-container" class="absolute inset-0 bg-white pt-24 px-8 translate-x-full transition-transform duration-300 flex flex-col z-[106] h-full overflow-y-auto">
+                <div id="submenu-container" class="absolute top-0 left-0 w-full bg-white pt-24 px-8 -translate-x-full transition-transform duration-300 flex flex-col z-[1000] h-full overflow-y-auto">
                     <button onclick="closeSubmenu()" class="flex items-center gap-2 text-gray-500 font-bold mb-8 text-sm uppercase tracking-widest">
                         <i class="fa-solid fa-chevron-left"></i> Back to Main Menu
                     </button>
@@ -351,7 +365,6 @@
                 </div>
                 
                 <div class="mt-auto mb-12 px-8 flex flex-col space-y-4 bg-white">
-                    
                     <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-full text-lg shadow-lg hover:bg-blue-700 transition-colors">
                         Sign up
                     </button>
@@ -951,43 +964,60 @@
                 }
             });
 
-            // --- NAVBAR RESPONSIVENESS ---
-            const toggleBtn = document.getElementById('mobile-toggle');
-            const menu = document.getElementById('mobile-menu');
-            const icon = toggleBtn.querySelector('i');
-            const body = document.body;
+            // --- NAVBAR RESPONSIVENESS (Logic remains same, ensures left-side slide) ---
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMainLinks = document.getElementById('mobile-main-links');
             const submenuContainer = document.getElementById('submenu-container');
-            const mainLinks = document.getElementById('mobile-main-links');
 
-            toggleBtn.addEventListener('click', () => {
-                const isOpen = menu.classList.contains('translate-x-0');
-                if (isOpen) {
-                    menu.classList.replace('translate-x-0', 'translate-x-full');
-                    icon.classList.replace('fa-xmark', 'fa-bars');
-                    body.style.overflow = '';
-                    closeSubmenu();
+            function toggleMenu() {
+                const menu = document.getElementById('mobile-menu');
+                const overlay = document.getElementById('menu-overlay');
+                const body = document.body;
+
+                if (menu.classList.contains('-translate-x-full')) {
+                    // OPEN: Slides in from the LEFT
+                    menu.classList.remove('-translate-x-full');
+                    menu.classList.add('translate-x-0');
+                    
+                    // Show Overlay
+                    overlay.classList.remove('hidden');
+                    setTimeout(() => overlay.classList.add('opacity-100'), 10);
+                    
+                    body.style.overflow = 'hidden';
                 } else {
-                    menu.classList.replace('translate-x-full', 'translate-x-0');
-                    icon.classList.replace('fa-bars', 'fa-xmark');
-                    body.style.overflow = 'hidden'; // Prevents background scrolling
+                    // CLOSE: Slides back out to the LEFT
+                    menu.classList.remove('translate-x-0');
+                    menu.classList.add('-translate-x-full');
+                    
+                    // Hide Overlay
+                    overlay.classList.remove('opacity-100');
+                    setTimeout(() => overlay.classList.add('hidden'), 300);
+                    
+                    body.style.overflow = '';
+                    closeSubmenu(); 
                 }
-            });
+            }
 
             function openSubmenu(type) {
                 ['website', 'store', 'tools', 'knowledge', 'help'].forEach(id => {
-                    document.getElementById(`submenu-${id}`).classList.add('hidden');
-                    document.getElementById(`submenu-${id}`).classList.remove('flex');
+                    const sub = document.getElementById(`submenu-${id}`);
+                    sub.classList.add('hidden');
+                    sub.classList.remove('flex');
                 });
-                const activeSub = document.getElementById(`submenu-${type}`);
-                activeSub.classList.remove('hidden');
-                activeSub.classList.add('flex');
-                submenuContainer.classList.remove('translate-x-full');
-                mainLinks.classList.add('opacity-0', '-translate-x-10');
+                
+                const target = document.getElementById(`submenu-${type}`);
+                target.classList.remove('hidden');
+                target.classList.add('flex');
+                
+                const subContainer = document.getElementById('submenu-container');
+                subContainer.classList.remove('-translate-x-full');
+                subContainer.classList.add('translate-x-0');
             }
 
             function closeSubmenu() {
-                submenuContainer.classList.add('translate-x-full');
-                mainLinks.classList.remove('opacity-0', '-translate-x-10');
+                const subContainer = document.getElementById('submenu-container');
+                subContainer.classList.remove('translate-x-0');
+                subContainer.classList.add('-translate-x-full');
             }
 
             // Navbar Scroll Logic
