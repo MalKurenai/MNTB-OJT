@@ -5,35 +5,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jimdo Portfolio Clone</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+        
         <style>
-            body { font-family: 'Inter', sans-serif; }
-            .jimdo-logo { letter-spacing: -2px; border: 2.5px solid black; }
-            
-            @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            /* Define Euclid Circular Fonts */
+            @font-face {
+                font-family: 'Euclid Circular';
+                src: url('https://webteam.jimstatic.com/fonts/fonts/euclidcircular/regular.woff2') format('woff2');
+                font-weight: 200;
+                font-style: normal;
             }
-            .animate-float { animation: float 4s ease-in-out infinite; }
+
+            @font-face {
+                font-family: 'Euclid Circular';
+                src: url('https://webteam.jimstatic.com/fonts/fonts/euclidcircular/medium.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Euclid Circular';
+                src: url('https://webteam.jimstatic.com/fonts/fonts/euclidcircular/semibold.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            /* Apply to the entire document */
+            body { 
+                font-family: 'Euclid Circular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            }
+
+            /* Maintain Jimdo's specific logo styling */
+            .jimdo-logo { 
+                letter-spacing: -2.5px; 
+                border: 2.5px solid black; 
+                font-weight: 800;
+            }
         </style>
     </head>
     <body class="bg-white text-gray-900">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-300 px-8 py-6 flex justify-between items-center bg-transparent">
-            <div class="flex items-center space-x-12">
-                <div class="jimdo-logo font-black text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
+        <nav id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-300 px-4 md:px-8 py-4 md:py-6 flex justify-between items-center bg-transparent">
+            <div class="flex items-center space-x-4 lg:space-x-12">
+                <a href="#hero">
+                    <div class="jimdo-logo font-black text-xl md:text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
+                </a>
                 
                 <div class="hidden lg:flex items-center space-x-8 font-bold text-[15px]">
                     <div class="relative group h-full py-2">
                         <button class="flex items-center gap-1 group-hover:text-blue-600 transition-colors font-semibold text-[15px]">
                             Website <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
                         </button>
-                        
                         <div class="absolute top-full left-0 w-[800px] max-w-[90vw] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
-                            
                             <div class="grid grid-cols-3 gap-8">
-                            
                                 <div>
                                     <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">OUR WEBSITE BUILDER</h4>
                                     <div class="space-y-2">
@@ -54,7 +78,6 @@
                                         </a>
                                     </div>
                                 </div>
-
                                 <div>
                                     <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">USEFUL TOOLS FOR YOUR WEBSITE</h4>
                                     <div class="space-y-2">
@@ -76,7 +99,6 @@
                                         </a>
                                     </div>
                                 </div>
-
                                 <div class="bg-gray-50 -m-8 ml-4 p-8 rounded-r-2xl">
                                     <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">FOR YOUR INDUSTRY</h4>
                                     <div class="space-y-4">
@@ -100,22 +122,16 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="hidden lg:flex items-center space-x-8 font-semibold text-[15px]">
                     <div class="relative group h-full py-2">
-                        <button class="flex items-center gap-1 group-hover:text-blue-600 transition-colors">
+                        <button class="flex items-center gap-1 group-hover:text-blue-600 transition-colors font-semibold text-[15px]">
                             Online Store <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
                         </button>
-
                         <div class="absolute top-full left-0 w-[800px] max-w-[90vw] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
-                            
                             <div class="grid grid-cols-2 gap-8">
-                            
                                 <div>
                                     <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">OUR ONLINE STORE BUILDER</h4>
                                     <div class="space-y-2">
@@ -136,9 +152,8 @@
                                         </a>
                                     </div>
                                 </div>
-
                                 <div>
-                                    <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">USEFUL TOOLS FOR YOUR WEBSITE</h4>
+                                    <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">USEFUL TOOLS FOR YOUR STORE</h4>
                                     <div class="space-y-2">
                                         <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
                                             <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Warning-proof legal texts</span>
@@ -154,21 +169,16 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="hidden lg:flex items-center space-x-8 font-semibold text-[15px]">
                     <div class="relative group h-full py-2">
                         <button class="flex items-center gap-1 group-hover:text-blue-600 transition-colors font-semibold text-[15px]">
                             Business-Tools <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
                         </button>
-                        
                         <div class="absolute top-full left-0 w-[350px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
                             <div class="flex flex-col">
-                            
                                 <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">MORE USEFUL TOOLS</h4>
                                 <div class="space-y-2">
                                     <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
@@ -187,177 +197,272 @@
                             </div>
                         </div>
                     </div>
+                    <a href="#" class="hover:text-blue-600 transition-colors font-semibold text-[15px]">Community</a>
                 </div>
-
-                <a href="#" class="hover:text-blue-600">Community</a>
             </div>
 
-            <div class="hidden xl:flex items-center space-x-6 font-semibold text-[15px]">
-    
-                <div class="relative group py-2">
-                    <button class="hover:text-blue-600 flex items-center gap-1 focus:outline-none">
-                    Knowledge Guide <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
-                    </button>
-                    <div class="absolute top-full right-0 w-[350px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
-                        <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">EXPERTISE, TIPS AND INSPIRATION</h4>
-                        <div class="space-y-2">
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">All Topics</span>
-                                <span class="block text-xs text-gray-500 mt-1">Knowledge guide overview</span>
-                            </a>
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Website Tips</span>
-                                <span class="block text-xs text-gray-500 mt-1">Get the most out of your website</span>
-                            </a>
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Success stories</span>
-                                <span class="block text-xs text-gray-500 mt-1">Inspiring stories by real Jimdo customers</span>
-                            </a>
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Jimdo Updates</span>
-                                <span class="block text-xs text-gray-500 mt-1">What's new at Jimdo?</span>
-                            </a>
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Founder Stories</span>
-                                <span class="block text-xs text-gray-500 mt-1">Inspiring stories by real Jimdo customers</span>
-                            </a>
+            <div class="flex items-center space-x-6">
+                <div class="hidden xl:flex items-center space-x-8 font-semibold text-[15px]">
+                    <div class="relative group py-2">
+                        <button class="hover:text-blue-600 flex items-center gap-1 focus:outline-none">
+                            Knowledge Guide <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full right-0 w-[350px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">EXPERTISE, TIPS AND INSPIRATION</h4>
+                            <div class="space-y-2">
+                                <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
+                                    <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">All Topics</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Knowledge guide overview</span>
+                                </a>
+                                <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
+                                    <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Website Tips</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Get the most out of your website</span>
+                                </a>
+                                <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
+                                    <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Success stories</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Inspiring stories by real Jimdo customers</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group py-2">
+                        <button class="hover:text-blue-600 flex items-center gap-1 focus:outline-none">
+                            Help <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full right-0 w-[300px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">HOW CAN WE HELP YOU?</h4>
+                            <div class="space-y-2">
+                                <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
+                                    <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Help Center</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Find answers to your questions</span>
+                                </a>
+                                <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
+                                    <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Contact support</span>
+                                    <span class="block text-xs text-gray-500 mt-1">Our support team is here for you</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative group py-2">
-                    <button class="hover:text-blue-600 flex items-center gap-1 focus:outline-none">
-                    Help <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="font-bold text-[15px] text-gray-700 hover:text-black transition-colors">Log In</a>
+                    <button class="bg-black text-white px-6 py-2.5 rounded-full font-bold text-[15px] hover:bg-gray-800 transition-all hidden md:block">
+                        Sign up
                     </button>
-                    <div class="absolute top-full right-0 w-[300px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl p-8 border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-4 group-hover:translate-y-0 duration-300 z-[100]">
-                        <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-6">HOW CAN WE HELP YOU?</h4>
-                        <div class="space-y-2">
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Help Center</span>
-                                <span class="block text-xs text-gray-500 mt-1">Find answers to your questions</span>
-                            </a>
-                            <a href="#" class="group/item block p-3 -ml-3 rounded-xl hover:bg-blue-50 transition-colors">
-                                <span class="block font-bold text-gray-900 group-hover/item:text-blue-600">Contact Support</span>
-                                <span class="block text-xs text-gray-500 mt-1">Our support team is here for you</span>
-                            </a>
+                    <button id="mobile-toggle" class="lg:hidden text-2xl focus:outline-none relative z-[110]">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+            <div id="mobile-menu" class="fixed inset-0 bg-white z-[105] translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 h-screen overflow-y-auto">
+                
+                <div id="mobile-main-links" class="flex flex-col space-y-6 text-2xl font-bold text-[#002d62] px-8 transition-all duration-300">
+                    <button onclick="openSubmenu('website')" class="flex justify-between items-center w-full">Website <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('store')" class="flex justify-between items-center w-full">Online Store <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('tools')" class="flex justify-between items-center w-full">Business-Tools <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <a href="#">Community</a>
+                    <button onclick="openSubmenu('knowledge')" class="flex justify-between items-center w-full">Knowledge Guide <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('help')" class="flex justify-between items-center w-full">Help <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                </div>
+
+                <div id="submenu-container" class="absolute inset-0 bg-white pt-24 px-8 translate-x-full transition-transform duration-300 flex flex-col z-[106] h-full overflow-y-auto">
+                    <button onclick="closeSubmenu()" class="flex items-center gap-2 text-gray-500 font-bold mb-8 text-sm uppercase tracking-widest">
+                        <i class="fa-solid fa-chevron-left"></i> Back to Main Menu
+                    </button>
+                    
+                    <div id="submenu-website" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">OUR WEBSITE BUILDER</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Create a website</a>
+                                <a href="#">Pricing and plans</a>
+                                <a href="#">Website examples</a>
+                                <a href="#">Your own domain</a>
+                                <a href="#">Founder Stories</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">USEFUL TOOLS FOR YOUR WEBSITE</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Warning-proof legal texts</a>
+                                <a href="#">Business listings</a>
+                                <a href="#">Online booking</a>
+                                <a href="#">Social media integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-store" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">OUR ONLINE STORE BUILDER</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Create an online store</a>
+                                <a href="#">Pricing and plans</a>
+                                <a href="#">Online store examples</a>
+                                <a href="#">Your own domain</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">USEFUL TOOLS FOR YOUR STORE</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Warning-proof legal texts</a>
+                                <a href="#">Business listings</a>
+                                <a href="#">Social media integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-tools" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">MORE USEFUL TOOLS</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Business listings</a>
+                                <a href="#">Warning-proof legal texts</a>
+                                <a href="#">Social media integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-knowledge" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">EXPERTISE, TIPS AND INSPIRATION</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">All Topics</a>
+                                <a href="#">Website Tips</a>
+                                <a href="#">Success stories</a>
+                                <a href="#">Jimdo Updates</a>
+                                <a href="#">Founder stories</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-help" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">HOW CAN WE HELP YOU?</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Help center</a>
+                                <a href="#">Contact support</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <a href="#" class="text-gray-600 hover:text-black">Log In</a>
-
-                <button class="lg:hidden text-2xl">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                
+                <div class="mt-auto mb-12 px-8 flex flex-col space-y-4 bg-white">
+                    
+                    <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-full text-lg shadow-lg hover:bg-blue-700 transition-colors">
+                        Sign up
+                    </button>
+                    <a href="#" class="text-center font-bold text-gray-600 py-2">Log In</a>
+                </div>
             </div>
         </nav>
 
-        <header class="max-w-7xl mx-auto px-8 py-20 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <h1 class="text-6xl font-extrabold leading-[1.1] mb-8">Create an Online Portfolio With Jimdo</h1>
-                <ul class="space-y-5 mb-12 text-lg font-medium">
-                    <li class="flex items-center gap-4"><span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">✔</span> Perfect for artists and creatives</li>
-                    <li class="flex items-center gap-4"><span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">✔</span> Reach a larger audience</li>
-                    <li class="flex items-center gap-4"><span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">✔</span> Show off what you can do</li>
+        <header class="max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-16 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 md:mb-8">Create an Online Portfolio With Jimdo</h1>
+                <ul class="space-y-4 md:space-y-5 mb-8 md:mb-12 text-base md:text-lg font-medium inline-block text-left">
+                    <li class="flex items-center gap-4"><span class="bg-blue-600 text-white rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center text-[10px] md:text-xs shrink-0">✔</span> Perfect for artists and creatives</li>
+                    <li class="flex items-center gap-4"><span class="bg-blue-600 text-white rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center text-[10px] md:text-xs shrink-0">✔</span> Reach a larger audience</li>
+                    <li class="flex items-center gap-4"><span class="bg-blue-600 text-white rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center text-[10px] md:text-xs shrink-0">✔</span> Show off what you can do</li>
                 </ul>
-                <button class="bg-[#0057ff] text-white px-12 py-5 rounded-md font-bold text-lg hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">
-                    Start Now
-                </button>
-                <p class="mt-4 text-xs text-gray-400">Start for free and upgrade anytime to one of our premium plans</p>
+                <div class="block">
+                    <button class="w-full sm:w-auto bg-[#0057ff] text-white px-12 py-4 md:py-5 rounded-md font-bold text-lg hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">
+                        Start Now
+                    </button>
+                </div>
+                <p class="mt-4 text-[10px] md:text-xs text-gray-400">Start for free and upgrade anytime to one of our premium plans</p>
             </div>
             <div class="rounded-2xl overflow-hidden shadow-2xl">
-                <img src="Jimdo images/hero-image.png" alt="Design Work" class="w-full h-[500px] object-cover">
+                <img src="Jimdo images/hero-image.png" alt="Design Work" class="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover">
             </div>
         </header>
 
-        <section class="bg-[#f4f7fa] py-32 px-8 overflow-hidden">
+        <section class="bg-[#f4f7fa] py-20 md:py-32 px-6 md:px-8 overflow-hidden">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-5xl font-extrabold text-center mb-24 tracking-tight">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 md:mb-24 tracking-tight">
                     Portfolio site features that matter
                 </h2>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div class="max-w-lg order-2 lg:order-1">
-                        <h3 class="text-3xl font-extrabold mb-6 leading-tight">Beautiful visuals, by design</h3>
-                        <p class="text-gray-600 text-lg leading-relaxed">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+                    <div class="max-w-lg order-2 lg:order-1 text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-extrabold mb-4 md:mb-6 leading-tight">Beautiful visuals, by design</h3>
+                        <p class="text-gray-600 text-base md:text-lg leading-relaxed">
                             Polished. Professional. Eye-catching. With Jimdo's design tools, your online portfolio makes the best impression. Choose colors and fonts, and even design your own logo. Then show off your work in high-impact slideshows.
                         </p>
                     </div>
 
-                    <div class="relative min-h-[450px] flex items-center justify-center lg:justify-end order-1 lg:order-2">
-                        <img src="Jimdo images/feature-1.png" alt="Jimdo Add Blocks UI Visualization" class="w-full max-w-2xl transform lg:translate-x-12">
+                    <div class="relative flex items-center justify-center lg:justify-end order-1 lg:order-2">
+                        <img src="Jimdo images/feature-1.png" alt="Jimdo UI" class="w-full max-w-2xl transform lg:translate-x-12">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white py-32 px-8">
-            <div class="max-w-7xl mx-auto space-y-48"> <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <div class="order-2 lg:order-2 max-w-xl">
-                        <h3 class="text-4xl font-extrabold mb-6 leading-tight">Help search engines find you</h3>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+        <section class="bg-white py-20 md:py-32 px-6 md:px-8">
+            <div class="max-w-7xl mx-auto space-y-24 md:space-y-48">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
+                    <div class="order-2 lg:order-2 max-w-xl text-center lg:text-left">
+                        <h3 class="text-3xl md:text-4xl font-extrabold mb-4 md:mb-6 leading-tight">Help search engines find you</h3>
+                        <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
                             Want your portfolio website to find the right audience? Our automatic SEO tools and tips walk you through every step, even if you're a beginner. Show up on Google and track traffic with Statistics, too.
                         </p>
                     </div>
                     <div class="order-1 lg:order-1 flex justify-center lg:justify-start">
-                        <img src="Jimdo images/feature-2.png" 
-                            alt="SEO Statistics Dashboard" 
-                            class="w-full max-w-4xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.02] duration-500">
+                        <img src="Jimdo images/feature-2.png" alt="SEO Dashboard" class="w-full max-w-4xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.02] duration-500">
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <div class="max-w-xl lg:order-1">
-                        <h3 class="text-4xl font-extrabold mb-6 leading-tight">Connect to social media in seconds</h3>
-                        <p class="text-gray-600 text-lg leading-relaxed">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
+                    <div class="max-w-xl lg:order-1 text-center lg:text-left">
+                        <h3 class="text-3xl md:text-4xl font-extrabold mb-4 md:mb-6 leading-tight">Connect to social media in seconds</h3>
+                        <p class="text-gray-600 text-base md:text-lg leading-relaxed">
                             Already using Facebook? That makes it even easier to build your online portfolio. Pull in photos right from your existing accounts, so your website is ready in a snap.
                         </p>
                     </div>
                     <div class="flex justify-center lg:justify-end lg:order-2">
-                        <img src="Jimdo images/feature-3.png" 
-                            alt="Social Media Integration UI" 
-                            class="w-full max-w-4xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.02] duration-500">
+                        <img src="Jimdo images/feature-3.png" alt="Social Media UI" class="w-full max-w-4xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.02] duration-500">
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-8 py-32 bg-white">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section class="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-32 bg-white">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 
                 <div class="max-w-xl">
-                    <h2 class="text-5xl font-extrabold mb-10 tracking-tight leading-tight">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-6 md:mb-10 tracking-tight leading-tight">
                         How to make an online portfolio
                     </h2>
                     
-                    <p class="text-lg text-gray-600 mb-12 leading-relaxed font-medium">
+                    <p class="text-base md:text-lg text-gray-600 mb-8 md:mb-12 leading-relaxed font-medium">
                         If you're a photographer, artist, designer, model, or creative, putting your work online is the best way to reach a larger audience. And you can do it in 4 easy steps.
                     </p>
 
-                    <ol class="space-y-10">
-                        <li class="flex gap-6">
+                    <ol class="space-y-8 md:space-y-10">
+                        <li class="flex gap-4 md:gap-6">
                             <span class="text-blue-600 font-bold text-lg min-w-[20px]">1.</span>
                             <p class="text-gray-900 font-semibold leading-relaxed">
                                 Sign up or log in with social media. You'll also be able to choose a domain (website address) for your portfolio site.
                             </p>
                         </li>
                         
-                        <li class="flex gap-6">
+                        <li class="flex gap-4 md:gap-6">
                             <span class="text-blue-600 font-bold text-lg min-w-[20px]">2.</span>
                             <p class="text-gray-900 font-semibold leading-relaxed">
                                 Tell us a little about your work. Answer a few questions and our portfolio maker creates the website for you.
                             </p>
                         </li>
 
-                        <li class="flex gap-6">
+                        <li class="flex gap-4 md:gap-6">
                             <span class="text-blue-600 font-bold text-lg min-w-[20px]">3.</span>
                             <p class="text-gray-900 font-semibold leading-relaxed">
                                 Add your images. Connect your social media accounts to pull in your images from around the web, or easily upload them.
                             </p>
                         </li>
 
-                        <li class="flex gap-6">
+                        <li class="flex gap-4 md:gap-6">
                             <span class="text-blue-600 font-bold text-lg min-w-[20px]">4.</span>
                             <p class="text-gray-900 font-semibold leading-relaxed">
                                 Publish your site—and you're online! Then follow our quick and easy tips to optimize your portfolio site even more!
@@ -365,14 +470,14 @@
                         </li>
                     </ol>
 
-                    <div class="mt-16">
-                        <button class="bg-[#0057ff] text-white px-12 py-5 rounded-md font-bold text-lg hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">
-                        Start Now
+                    <div class="mt-12 md:mt-16">
+                        <button class="w-full md:w-auto bg-[#0057ff] text-white px-12 py-5 rounded-md font-bold text-lg hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95">
+                            Start Now
                         </button>
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden shadow-xl lg:h-[800px]">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl h-[300px] md:h-[500px] lg:h-[800px]">
                     <img 
                         src="Jimdo images/steplist-portfolio.png" 
                         alt="Creative professional working" 
@@ -382,19 +487,19 @@
             </div>
         </section>
 
-        <section class="bg-white py-32 px-8">
+        <section class="bg-white py-16 md:py-32 px-6 md:px-8">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-5xl font-extrabold text-center mb-24 tracking-tight">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 md:mb-24 tracking-tight">
                     What kind of portfolio website will you create?
                 </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-16 md:gap-y-24">
                     
                     <div class="group">
-                        <div class="mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <div class="mb-6 md:mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
                             <img src="Jimdo images/branch-1.png" alt="Graphic Design Portfolio" class="w-full aspect-[16/10] object-cover">
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Graphic designer portfolio</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Graphic designer portfolio</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             Your graphic design online portfolio shows off your skills and work examples in one place, from different design programs to different mediums.
                         </p>
@@ -405,10 +510,10 @@
                     </div>
 
                     <div class="group">
-                        <div class="mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <div class="mb-6 md:mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
                             <img src="Jimdo images/branch-2.png" alt="Photography Portfolio" class="w-full aspect-[16/10] object-cover">
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Photographer portfolio</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Photographer portfolio</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             Building a photography portfolio means focusing on the work, not the website. Jimdo's modern designs keep your images front and center. You can accept bookings, too!
                         </p>
@@ -419,10 +524,10 @@
                     </div>
 
                     <div class="group">
-                        <div class="mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <div class="mb-6 md:mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
                             <img src="Jimdo images/branch-3.png" alt="Artist Portfolio" class="w-full aspect-[16/10] object-cover">
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Artist portfolio</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Artist portfolio</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             Want to put your art online and sell it, too? Upload high-resolution images, post new work, and build your client base with a portfolio and online store all in one.
                         </p>
@@ -433,10 +538,10 @@
                     </div>
 
                     <div class="group">
-                        <div class="mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <div class="mb-6 md:mb-10 overflow-hidden rounded-xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
                             <img src="Jimdo images/branch-4.png" alt="Model Portfolio" class="w-full aspect-[16/10] object-cover">
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Model portfolio</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Model portfolio</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             You're versatile and stylish, and your portfolio can be too. A website is a platform that you control, and it's easy to use images right from your social media accounts.
                         </p>
@@ -450,117 +555,127 @@
             </div>
         </section>
 
-        <section class="bg-white py-24 px-8 overflow-hidden">
+        <section class="bg-white py-16 md:py-24 px-6 md:px-8 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center">
-                <h2 class="text-5xl font-extrabold mb-4 tracking-tight">Get portfolio design inspiration with these examples</h2>
-                <p class="text-gray-600 mb-16">Artists ♡ Jimdo! Spark your creativity with these website portfolio examples built with Jimdo.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Get portfolio design inspiration with these examples</h2>
+                <p class="text-gray-600 mb-8 md:mb-16 px-4">Artists ♡ Jimdo! Spark your creativity with these website portfolio examples built with Jimdo.</p>
                 
                 <div class="relative flex items-center justify-center">
-                    <button onclick="moveCarousel(-1)" class="absolute left-4 lg:left-10 z-30 bg-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform border border-gray-100 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button onclick="moveCarousel(-1)" class="absolute left-0 md:left-4 lg:left-10 z-30 bg-white p-3 md:p-4 rounded-full shadow-xl hover:scale-110 transition-transform border border-gray-100 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
 
                     <div class="w-full overflow-hidden">
-                        <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out py-12">
-                            </div>
+                        <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out py-8 md:py-12">
+                        </div>
                     </div>
 
-                    <button onclick="moveCarousel(1)" class="absolute right-4 lg:right-10 z-30 bg-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform border border-gray-100 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <button onclick="moveCarousel(1)" class="absolute right-0 md:right-4 lg:right-10 z-30 bg-white p-3 md:p-4 rounded-full shadow-xl hover:scale-110 transition-transform border border-gray-100 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
                 </div>
 
-                <div class="flex justify-center gap-3 mt-8" id="dots-container"></div>
+                <div class="flex justify-center gap-2 md:gap-3 mt-8" id="dots-container"></div>
             </div>
         </section>
 
-        <section class="bg-white py-32 px-8">
+        <section class="bg-white py-16 md:py-32 px-6 md:px-8">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-5xl font-extrabold text-center mb-16 tracking-tight">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-10 md:mb-16 tracking-tight">
                     Online portfolio FAQ
                 </h2>
 
                 <div class="space-y-0 border-y border-gray-100"> 
                     <div class="border-b border-gray-100 last:border-none">
                         <button onclick="toggleFAQ(this)" class="w-full py-6 flex items-center justify-between text-left group hover:text-blue-600 transition-colors">
-                            <span class="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
-                                What are the benefits of having an online portfolio?
+                            <span class="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 pr-4">
+                                What are the advantages of an online portfolio?
                             </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="pb-6 text-gray-600 leading-relaxed">
-                                Creating an online portfolio is one of the best ways to show off your best work, all in one place. It gives you a hub for potential clients and recruiters to see what you can do on a platform you control.
+                            <p class="pb-6 text-gray-600 leading-relaxed text-sm md:text-base">
+                                A portfolio lets you showcase your work and skills in one place. Whether or not you already use social media, a portfolio website provides a central hub for your target audience, potential clients, agencies, and anyone else interested.
+                                Your website is a platform you have complete control over - and you can redesign it whenever you want.
                             </p>
                         </div>
                     </div>
-
+                </div>
+                <div class="space-y-0 border-y border-gray-100"> 
                     <div class="border-b border-gray-100 last:border-none">
                         <button onclick="toggleFAQ(this)" class="w-full py-6 flex items-center justify-between text-left group hover:text-blue-600 transition-colors">
-                            <span class="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
-                                How do I make a good portfolio website?
+                            <span class="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 pr-4">
+                                Hpow can I create a good portfolio website?
                             </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="pb-6 text-gray-600 leading-relaxed">
-                                The best way to start is with a custom domain and high-quality images. Choose a design that complements your work and make sure to optimize for search engines so people can find you.
+                            <p class="pb-6 text-gray-600 leading-relaxed text-sm md:text-base">
+                                Fortunately, creating a high-quality portfolio is incredibly easy with Jimdo these days. The system guides you step by step. A custom domain (web address) is highly recommended for a professional portfolio. 
+                                This demonstrates the credibility of your project and helps clients remember your website. Also, be sure to use high-resolution photos that capture your visitors' attention. In addition to design, search engine optimization (SEO) is crucial - 
+                                Jimdo supports you with this as well, ensuring a straightforward SEO process and helping users find you quickly on Google.
                             </p>
                         </div>
                     </div>
-
+                </div>
+                <div class="space-y-0 border-y border-gray-100"> 
                     <div class="border-b border-gray-100 last:border-none">
                         <button onclick="toggleFAQ(this)" class="w-full py-6 flex items-center justify-between text-left group hover:text-blue-600 transition-colors">
-                            <span class="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
-                                What should I put in my online portfolio?
+                            <span class="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 pr-4">
+                                What should I show in my portfolio?
                             </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="pb-6 text-gray-600 leading-relaxed">
-                                Include a short bio, professional headshot, and your absolute best work. Don't post everything—be picky and curate your projects to show your versatility and skills.
+                            <p class="pb-6 text-gray-600 leading-relaxed text-sm md:text-base">
+                                A good portfolio website doesn't have to be complicated. Introduce yourself to your visitors with a short bio and a photo on your "About Me" page, and remember to clearly describe your expertise and skills. Then add your best and most compelling photos
+                                on the subpages - for example, as a slideshow or in galleries. A clear and concise "Contact" section is also essential, so visitors can easily get in touch with you.
                             </p>
                         </div>
                     </div>
-
+                </div>
+                <div class="space-y-0 border-y border-gray-100"> 
                     <div class="border-b border-gray-100 last:border-none">
                         <button onclick="toggleFAQ(this)" class="w-full py-6 flex items-center justify-between text-left group hover:text-blue-600 transition-colors">
-                            <span class="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
-                                Why is an online portfolio important for a designer?
+                            <span class="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 pr-4">
+                                Why is a portfolio important for designers?
                             </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="pb-6 text-gray-600 leading-relaxed">
-                                Visuals are the story for a designer. An online portfolio lets you showcase your personality through photography, modeling shots, or graphic design in a way a paper resume cannot.
+                            <p class="pb-6 text-gray-600 leading-relaxed text-sm md:text-base">
+                                As a designer, images are a huge part of your personality and your profession. An online portfolio helps you attract the attention of recruiters, agencies, or potential clients beyond the traditional portfolio.
+                                Furthermore, your own website offers many more possibilities through videos, multimedia, and much more. That's why an online portfolio is the ideal way to present your photography, graphic design, and work online in a truly personal way.
                             </p>
                         </div>
                     </div>
-
+                </div>
+                <div class="space-y-0 border-y border-gray-100"> 
                     <div class="border-b border-gray-100 last:border-none">
                         <button onclick="toggleFAQ(this)" class="w-full py-6 flex items-center justify-between text-left group hover:text-blue-600 transition-colors">
-                            <span class="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
-                                How do I choose the right design for my portfolio website?
+                            <span class="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 pr-4">
+                                How do I find the right design to create my portfolio?
                             </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-blue-600 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="pb-6 text-gray-600 leading-relaxed">
-                                Pick a style that fits your brand. Clean and modern designs often work best as they showcase your work without distractions.
+                            <p class="pb-6 text-gray-600 leading-relaxed text-sm md:text-base">
+                                The best portfolio designs are clearly structured, modern, and put your work front and center without distractions. When you sign up for Jimdo, simply choose the style that suits you best! When designing your website, you can then customize the design to your liking and arrange everything
+                                exactly how you want it - it's completely straightforward and intuitive. This gives you more time for your core work, because your website is up and running in no time.
                             </p>
                         </div>
                     </div>
@@ -568,15 +683,16 @@
             </div>
         </section>
 
-        <section class="bg-white py-24 px-8">
+        <section class="bg-white py-16 md:py-24 px-6 md:px-8">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-24">
-                    <h2 class="text-5xl font-extrabold mb-6 tracking-tight">Show off your hard work</h2>
-                    <p class="text-xl text-gray-600 mb-16 font-medium">A portfolio creator for every profession</p>
+                <div class="text-center mb-16 md:mb-24">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4 md:mb-6 tracking-tight">Show off your hard work</h2>
+                    <p class="text-lg md:text-xl text-gray-600 mb-12 md:mb-16 font-medium">A portfolio creator for every profession</p>
                     
-                    <div class="grid md:grid-cols-3 gap-12 text-center">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12 text-center">
+                        
                         <div class="flex flex-col items-center">
-                            <h3 class="text-2xl font-bold mb-4">Freelancer</h3>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4">Freelancer</h3>
                             <p class="text-gray-600 leading-relaxed mb-6 max-w-xs">
                                 Every freelancer needs a website to attract new customers, find work, and show off your skills. Build your own portfolio, with no coding required!
                             </p>
@@ -588,7 +704,7 @@
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <h3 class="text-2xl font-bold mb-4">Photography</h3>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4">Photography</h3>
                             <p class="text-gray-600 leading-relaxed mb-6 max-w-xs">
                                 Photographers love Jimdo for its beautiful and easy portfolio websites. See how you can get your photos online quickly and start taking bookings.
                             </p>
@@ -600,7 +716,7 @@
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <h3 class="text-2xl font-bold mb-4">Design</h3>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4">Design</h3>
                             <p class="text-gray-600 leading-relaxed mb-6 max-w-xs">
                                 Create an art portfolio that matches your style. Our built-in tools will help you improve your search engine ranking and even sell your artwork online.
                             </p>
@@ -610,39 +726,39 @@
                                 <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                             </a>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer class="bg-white pt-32 pb-16 px-8 border-t border-gray-100">
+        <footer class="bg-white pt-16 md:pt-32 pb-16 px-8 border-t border-gray-100">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 pb-24">
-                    <div class="col-span-2 lg:col-span-1">
-                        <div class="mb-10">
-                            <span class="text-3xl font-black tracking-tighter border-2 border-black px-3 py-1">JIMDO</span>
-                        </div>
-                        <div class="flex gap-8">
-                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-facebook text-2xl"></i></a>
-                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
-                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-tiktok text-2xl"></i></a>
-                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-youtube text-2xl"></i></a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 class="font-bold text-[#002d62] mb-8 text-base">Products</h4>
-                        <ul class="space-y-4 text-base font-bold text-[#002d62]">
-                            <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Website</a></li>
+                <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-y-12 gap-x-8 md:gap-16 pb-24">
+                    
+                    <div class="border-b border-gray-100 pb-12 md:border-0 md:pb-0">
+                        <button onclick="toggleMobileFooter(this)" class="w-full flex justify-between items-center group cursor-pointer focus:outline-none md:cursor-default md:mb-8">
+                            <h4 class="font-bold text-[#002d62] text-base">Products</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] md:hidden transition-transform duration-300 group-focus:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul class="footer-accordion space-y-4 text-base font-bold text-[#002d62] max-h-0 md:max-h-full overflow-hidden md:overflow-visible transition-all duration-300 ease-in-out md:block pt-0 md:pt-2">
+                            <li class="pt-4 md:pt-0"><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Website</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Online Store</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Domain</a></li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 class="font-bold text-[#002d62] mb-8 text-base">About us</h4>
-                        <ul class="space-y-4 text-base font-bold text-[#002d62]">
-                            <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">About Jimdo</a></li>
+                    <div class="border-b border-gray-100 pb-12 md:border-0 md:pb-0">
+                        <button onclick="toggleMobileFooter(this)" class="w-full flex justify-between items-center group cursor-pointer focus:outline-none md:cursor-default md:mb-8">
+                            <h4 class="font-bold text-[#002d62] text-base">About us</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] md:hidden transition-transform duration-300 group-focus:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul class="footer-accordion space-y-4 text-base font-bold text-[#002d62] max-h-0 md:max-h-full overflow-hidden md:overflow-visible transition-all duration-300 ease-in-out md:block pt-0 md:pt-2">
+                            <li class="pt-4 md:pt-0"><a href="#" class="hover:text-blue-600 hover:underline transition-colors">About Jimdo</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Careers</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Press</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Jimdo-ifo Index</a></li>
@@ -652,10 +768,15 @@
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 class="font-bold text-[#002d62] mb-8 text-base">Resources</h4>
-                        <ul class="space-y-4 text-base font-bold text-[#002d62]">
-                            <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Jimdo Blog</a></li>
+                    <div class="border-b border-gray-100 pb-12 md:border-0 md:pb-0">
+                        <button onclick="toggleMobileFooter(this)" class="w-full flex justify-between items-center group cursor-pointer focus:outline-none md:cursor-default md:mb-8">
+                            <h4 class="font-bold text-[#002d62] text-base">Resources</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] md:hidden transition-transform duration-300 group-focus:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul class="footer-accordion space-y-4 text-base font-bold text-[#002d62] max-h-0 md:max-h-full overflow-hidden md:overflow-visible transition-all duration-300 ease-in-out md:block pt-0 md:pt-2">
+                            <li class="pt-4 md:pt-0"><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Jimdo Blog</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">JIMDOConnect</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Founder Stories</a></li>
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Inspiration</a></li>
@@ -663,20 +784,34 @@
                             <li><a href="#" class="hover:text-blue-600 hover:underline transition-colors">Contact Support</a></li>
                         </ul>
                     </div>
+
+                    <div class="order-last md:order-first col-span-1 lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+                        <div class="mb-10">
+                            <a href="#hero">
+                                <span class="text-3xl font-black tracking-tighter border-2 border-black px-3 py-1 bg-white">JIMDO</span>
+                            </a>
+                        </div>
+                        <div class="flex gap-8 justify-center md:justify-start">
+                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-facebook text-2xl"></i></a>
+                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
+                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-tiktok text-2xl"></i></a>
+                            <a href="#" class="text-gray-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"><i class="fab fa-youtube text-2xl"></i></a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div class="flex flex-wrap justify-center gap-10 text-sm font-bold text-[#002d62]">
-                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors">Legal notice</a>
-                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors">Terms of Service</a>
-                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors">Privacy Policy</a>
-                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors">Cookie Settings</a>
+                <div class="pt-12 border-t border-gray-100 flex flex-col-reverse md:flex-row justify-between items-center gap-12 text-center md:text-left">
+                    <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4 text-sm font-bold text-[#002d62]">
+                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors whitespace-nowrap">Legal notice</a>
+                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors whitespace-nowrap">Terms of Service</a>
+                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors whitespace-nowrap">Privacy Policy</a>
+                        <a href="#" class="hover:text-blue-600 hover:underline transition-colors whitespace-nowrap">Cookie Settings</a>
                     </div>
 
                     <div class="relative group">
-                        <div class="absolute bottom-full right-0 mb-6 w-64 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.12)] rounded-xl py-4 border border-gray-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-50">
+                        <div class="absolute bottom-full right-1/2 translate-x-1/2 md:right-0 md:translate-x-0 mb-6 w-64 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.12)] rounded-xl py-4 border border-gray-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-50">
                             
-                            <a href="#" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 group/item transition-colors">
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, 'English')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 group/item transition-colors">
                                 <div class="flex items-center gap-4">
                                     <div class="flex -space-x-3">
                                         <div class="w-8 h-8 rounded-full border-2 border-white shadow-sm overflow-hidden bg-gray-100">
@@ -688,62 +823,97 @@
                                     </div>
                                     <span class="text-base font-bold text-[#002d62]">English</span>
                                 </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg id="check-English" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                                 </svg>
                             </a>
 
-                            <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors">
-                                <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden flex flex-col">
-                                    <div class="h-1/3 bg-black"></div><div class="h-1/3 bg-red-600"></div><div class="h-1/3 bg-yellow-400"></div>
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, 'Deutsch')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-100">
+                                        <img src="Jimdo images/Germany.png" alt="DE" class="w-full h-full object-cover">
+                                    </div>
+                                    <span class="text-base font-bold text-[#002d62]">Deutsch</span>
                                 </div>
-                                <span class="text-base font-bold text-[#002d62]">Deutsch</span>
+                                <svg id="check-Deutsch" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
                             </a>
-                            <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors">
-                                <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden flex flex-col">
-                                    <div class="h-1/4 bg-red-600"></div><div class="h-1/2 bg-yellow-400"></div><div class="h-1/4 bg-red-600"></div>
+
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, 'Español')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-100">
+                                        <img src="Jimdo images/Spain.png" alt="ES" class="w-full h-full object-cover">
+                                    </div>
+                                    <span class="text-base font-bold text-[#002d62]">Español</span>
                                 </div>
-                                <span class="text-base font-bold text-[#002d62]">Español</span>
+                                <svg id="check-Español" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
                             </a>
-                            <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors">
-                                <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden flex">
-                                    <div class="w-1/3 bg-blue-700"></div><div class="w-1/3 bg-white"></div><div class="w-1/3 bg-red-600"></div>
+
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, 'Français')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-100">
+                                        <img src="Jimdo images/France.png" alt="FR" class="w-full h-full object-cover">
+                                    </div>
+                                    <span class="text-base font-bold text-[#002d62]">Français</span>
                                 </div>
-                                <span class="text-base font-bold text-[#002d62]">Français</span>
+                                <svg id="check-Français" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
                             </a>
-                            <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors">
-                                <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden flex">
-                                    <div class="w-1/3 bg-green-600"></div><div class="w-1/3 bg-white"></div><div class="w-1/3 bg-red-600"></div>
+
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, 'Italiano')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-100">
+                                        <img src="Jimdo images/Italy.png" alt="IT" class="w-full h-full object-cover">
+                                    </div>
+                                    <span class="text-base font-bold text-[#002d62]">Italiano</span>
                                 </div>
-                                <span class="text-base font-bold text-[#002d62]">Italiano</span>
+                                <svg id="check-Italiano" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
                             </a>
-                            <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors">
-                                <div class="w-8 h-8 rounded-full border border-gray-100 bg-white flex items-center justify-center">
-                                    <div class="w-4 h-4 rounded-full bg-red-600"></div>
+
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, '日本語')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-100">
+                                        <img src="Jimdo images/Japan.png" alt="JP" class="w-full h-full object-cover">
+                                    </div>
+                                    <span class="text-base font-bold text-[#002d62]">日本語</span>
                                 </div>
-                                <span class="text-base font-bold text-[#002d62]">日本語</span>
+                                <svg id="check-日本語" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
                             </a>
-                            <a href="#" class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 transition-colors">
-                                <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden flex flex-col">
-                                    <div class="h-1/3 bg-[#ae1c28]"></div><div class="h-1/3 bg-white"></div><div class="h-1/3 bg-[#21468b]"></div>
+
+                            <a href="javascript:void(0)" onclick="updateLanguage(this, 'Nederlands')" class="flex items-center justify-between px-6 py-3 hover:bg-gray-50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-100">
+                                        <img src="Jimdo images/Netherlands.png" alt="NL" class="w-full h-full object-cover">
+                                    </div>
+                                    <span class="text-base font-bold text-[#002d62]">Nederlands</span>
                                 </div>
-                                <span class="text-base font-bold text-[#002d62]">Nederlands</span>
+                                <svg id="check-Nederlands" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#002d62] lang-check hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                </svg>
                             </a>
                         </div>
 
-                        <button class="flex items-center gap-4 py-2 cursor-pointer group">
+                        <button class="flex items-center gap-4 py-2 cursor-pointer group focus:outline-none">
                             <div class="flex items-center gap-3">
-                                <div class="flex -space-x-3.5">
-                                    <div class="w-10 h-10 rounded-full border-2 border-white shadow-md overflow-hidden bg-gray-100 z-10">
+                                <div id="current-lang-icon" class="flex -space-x-3.5">
+                                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-md overflow-hidden bg-gray-100 z-10">
                                         <img src="Jimdo images/UK.png" alt="UK" class="w-full h-full object-cover">
                                     </div>
-                                    <div class="w-10 h-10 rounded-full border-2 border-white shadow-md overflow-hidden bg-gray-100">
+                                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-md overflow-hidden bg-gray-100">
                                         <img src="Jimdo images/US.png" alt="US" class="w-full h-full object-cover">
                                     </div>
                                 </div>
-                                <span class="text-xl font-bold text-[#002d62] group-hover:text-blue-600 transition-colors">English</span>
+                                <span id="current-lang-text" class="text-lg md:text-xl font-bold text-[#002d62] group-hover:text-blue-600 transition-colors">English</span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#002d62] group-hover:text-blue-600 transition-all duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-[#002d62] group-hover:text-blue-600 transition-all duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
@@ -753,6 +923,18 @@
         </footer>
 
         <script>
+            // --- TAILWIND ---
+            // Configure Tailwind to use the new font family as the default "sans"
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Euclid Circular', 'sans-serif'],
+                        },
+                    },
+                },
+            }
+
             // --- NAVBAR ---
             const navbar = document.getElementById('navbar');
   
@@ -765,6 +947,57 @@
                     // States at the top
                     navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'py-4', 'border-b');
                     navbar.classList.add('bg-transparent', 'py-6', 'border-transparent');
+                }
+            });
+
+            // --- NAVBAR RESPONSIVENESS ---
+            const toggleBtn = document.getElementById('mobile-toggle');
+            const menu = document.getElementById('mobile-menu');
+            const icon = toggleBtn.querySelector('i');
+            const body = document.body;
+            const submenuContainer = document.getElementById('submenu-container');
+            const mainLinks = document.getElementById('mobile-main-links');
+
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = menu.classList.contains('translate-x-0');
+                if (isOpen) {
+                    menu.classList.replace('translate-x-0', 'translate-x-full');
+                    icon.classList.replace('fa-xmark', 'fa-bars');
+                    body.style.overflow = '';
+                    closeSubmenu();
+                } else {
+                    menu.classList.replace('translate-x-full', 'translate-x-0');
+                    icon.classList.replace('fa-bars', 'fa-xmark');
+                    body.style.overflow = 'hidden'; // Prevents background scrolling
+                }
+            });
+
+            function openSubmenu(type) {
+                ['website', 'store', 'tools', 'knowledge', 'help'].forEach(id => {
+                    document.getElementById(`submenu-${id}`).classList.add('hidden');
+                    document.getElementById(`submenu-${id}`).classList.remove('flex');
+                });
+                const activeSub = document.getElementById(`submenu-${type}`);
+                activeSub.classList.remove('hidden');
+                activeSub.classList.add('flex');
+                submenuContainer.classList.remove('translate-x-full');
+                mainLinks.classList.add('opacity-0', '-translate-x-10');
+            }
+
+            function closeSubmenu() {
+                submenuContainer.classList.add('translate-x-full');
+                mainLinks.classList.remove('opacity-0', '-translate-x-10');
+            }
+
+            // Navbar Scroll Logic
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white', 'shadow-md');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    navbar.classList.remove('bg-white', 'shadow-md');
+                    navbar.classList.add('bg-transparent');
                 }
             });
 
@@ -893,6 +1126,74 @@
                     answer.style.maxHeight = answer.scrollHeight + "px";
                     icon.style.transform = "rotate(180deg)";
                 }
+            }
+
+            // --- FOOTER ---
+            function toggleMobileFooter(button) {
+                // Only run on mobile where the chevron exists
+                const chevron = button.querySelector('svg');
+                if (!chevron || window.innerWidth >= 768) return;
+
+                const accordion = button.nextElementSibling;
+                const allAccordions = document.querySelectorAll('.footer-accordion');
+                const allChevrons = document.querySelectorAll('.border-b svg');
+
+                // Close other open sections
+                allAccordions.forEach(acc => {
+                    if (acc !== accordion) acc.style.maxHeight = '0px';
+                });
+                allChevrons.forEach(chev => {
+                    if (chev !== chevron) chev.style.transform = 'rotate(0deg)';
+                });
+
+                // Toggle current section
+                if (accordion.style.maxHeight && accordion.style.maxHeight !== '0px') {
+                    accordion.style.maxHeight = '0px';
+                    chevron.style.transform = 'rotate(0deg)';
+                } else {
+                    // accordion.scrollHeight ensures accurate height calculation for the expand transition
+                    accordion.style.maxHeight = accordion.scrollHeight + 'px';
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+            }
+
+            // --- LANGUAGE SELECTOR ---
+            function updateLanguage(element, name) {
+                document.getElementById('current-lang-text').innerText = name;
+                
+                const clickedIconWrap = element.querySelector('.flex.items-center.gap-4 > div');
+                const mainIconContainer = document.getElementById('current-lang-icon');
+
+                if (name === 'English') {
+                    // Restore stacking for English
+                    mainIconContainer.className = "flex -space-x-3.5 items-center";
+                } else {
+                    // Center the single flag
+                    mainIconContainer.className = "flex items-center justify-center";
+                }
+
+                mainIconContainer.innerHTML = clickedIconWrap.innerHTML;
+
+                const innerItems = mainIconContainer.querySelectorAll('div, img');
+                innerItems.forEach(item => {
+                    // Core circular styling
+                    item.classList.add('rounded-full', 'aspect-square', 'object-cover', 'overflow-hidden');
+                    
+                    if (name === 'English') {
+                        // English still needs white borders for the overlap effect
+                        item.className = "w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-md overflow-hidden bg-gray-100 z-10 object-cover";
+                        item.style.borderColor = '#ffffff'; 
+                    } else {
+                        // Single flags: No border, shadow only for depth
+                        item.className = "w-7 h-7 md:w-8 md:h-8 rounded-full object-cover shadow-sm";
+                        item.style.border = 'none'; // Explicitly removes the Jimdo blue border
+                    }
+                });
+
+                // Toggle checkmarks
+                document.querySelectorAll('.lang-check').forEach(c => c.classList.add('hidden'));
+                const check = document.getElementById('check-' + name);
+                if (check) check.classList.remove('hidden');
             }
         </script>
 
