@@ -39,7 +39,7 @@
             .jimdo-logo { 
                 letter-spacing: -2.5px; 
                 border: 2.5px solid black; 
-                font-weight: 800;
+                font-weight: 600;
             }
         </style>
     </head>
@@ -259,12 +259,13 @@
 
             <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/40 z-[998] hidden opacity-0 transition-opacity duration-300"></div>
 
-            <div id="mobile-menu" style="left: 0;" class="fixed top-0 left-0 w-full bg-white z-[999] -translate-x-full left-[-1px] transition-transform duration-300 lg:hidden flex flex-col pt-8 h-screen overflow-y-auto shadow-2xl">
-                <div class="px-8 mb-10 flex justify-between items-center">
+            <div id="mobile-menu" class="fixed top-0 -left-4 w-80 max-w-[90%] bg-white z-[999] -translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-8 h-screen overflow-y-auto shadow-2xl">
+    
+                <div class="px-8 mb-10 flex justify-between items-center bg-white">
                     <a href="#hero" onclick="toggleMenu()">
                         <div class="jimdo-logo inline-block font-black text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
                     </a>
-                    <button onclick="toggleMenu()" class="text-3xl text-gray-800 focus:outline-none">
+                    <button onclick="toggleMenu()" class="text-3xl text-gray-800 focus:outline-none bg-white">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -973,28 +974,36 @@
                 const menu = document.getElementById('mobile-menu');
                 const overlay = document.getElementById('menu-overlay');
                 const body = document.body;
+                const navLogo = document.querySelector('.nav-container .jimdo-logo'); 
 
                 if (menu.classList.contains('-translate-x-full')) {
-                    // OPEN: Slides in from the LEFT
-                    menu.classList.remove('-translate-x-full');
-                    menu.classList.add('translate-x-0');
+                    // OPEN
+                    menu.classList.replace('-translate-x-full', 'translate-x-0');
                     
-                    // Show Overlay
+                    // ADD THIS LINE: This counters the -left-4 to make the menu perfectly flush with the edge
+                    menu.style.left = '0px';
+
                     overlay.classList.remove('hidden');
                     setTimeout(() => overlay.classList.add('opacity-100'), 10);
-                    
                     body.style.overflow = 'hidden';
+
+                    if (navLogo) navLogo.style.opacity = '0'; 
                 } else {
-                    // CLOSE: Slides back out to the LEFT
-                    menu.classList.remove('translate-x-0');
-                    menu.classList.add('-translate-x-full');
+                    // CLOSE
+                    menu.classList.replace('translate-x-0', '-translate-x-full');
                     
-                    // Hide Overlay
+                    // ADD THIS LINE: Put the -4px back so the shadow is hidden again
+                    menu.style.left = '-16px'; // -16px is the equivalent of -left-4
+
                     overlay.classList.remove('opacity-100');
                     setTimeout(() => overlay.classList.add('hidden'), 300);
-                    
                     body.style.overflow = '';
-                    closeSubmenu(); 
+
+                    if (navLogo) {
+                        setTimeout(() => {
+                            navLogo.style.opacity = '1';
+                        }, 300);
+                    }
                 }
             }
 
