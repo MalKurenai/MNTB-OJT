@@ -256,122 +256,6 @@
                         <i id="menu-icon" class="fa-solid fa-bars"></i>
                     </button>
                 </div>
-
-            <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/40 z-[998] hidden opacity-0 transition-opacity duration-300"></div>
-
-            <div id="mobile-menu" class="fixed top-0 -left-4 w-80 max-w-[90%] bg-white z-[999] -translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-8 h-screen overflow-y-auto shadow-2xl">
-    
-                <div class="px-8 mb-10 flex justify-between items-center bg-white">
-                    <a href="#hero" onclick="toggleMenu()">
-                        <div class="jimdo-logo inline-block font-black text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
-                    </a>
-                    <button onclick="toggleMenu()" class="text-3xl text-gray-800 focus:outline-none bg-white">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-
-                <div id="mobile-main-links" class="flex flex-col space-y-6 text-2xl font-bold text-[#002d62] px-8 transition-all duration-300">
-                    <button onclick="openSubmenu('website')" class="flex justify-between items-center w-full text-left">Website <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    <button onclick="openSubmenu('store')" class="flex justify-between items-center w-full text-left">Online Store <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    <button onclick="openSubmenu('tools')" class="flex justify-between items-center w-full text-left">Business-Tools <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    
-                    <a href="#">Community</a>
-                    
-                    <div class="py-2"></div> 
-
-                    <button onclick="openSubmenu('knowledge')" class="flex justify-between items-center w-full text-left">Knowledge Guide <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                    <button onclick="openSubmenu('help')" class="flex justify-between items-center w-full text-left">Help <i class="fa-solid fa-chevron-right text-sm"></i></button>
-                </div>
-
-                <div id="submenu-container" class="absolute top-0 left-0 w-full bg-white pt-24 px-8 -translate-x-full transition-transform duration-300 flex flex-col z-[1000] h-full overflow-y-auto">
-                    <button onclick="closeSubmenu()" class="flex items-center gap-2 text-gray-500 font-bold mb-8 text-sm uppercase tracking-widest">
-                        <i class="fa-solid fa-chevron-left"></i> Back to Main Menu
-                    </button>
-                    
-                    <div id="submenu-website" class="hidden flex-col space-y-8 pb-20">
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">OUR WEBSITE BUILDER</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">Create a website</a>
-                                <a href="#">Pricing and plans</a>
-                                <a href="#">Website examples</a>
-                                <a href="#">Your own domain</a>
-                                <a href="#">Founder Stories</a>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">USEFUL TOOLS FOR YOUR WEBSITE</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">Warning-proof legal texts</a>
-                                <a href="#">Business listings</a>
-                                <a href="#">Online booking</a>
-                                <a href="#">Social media integration</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="submenu-store" class="hidden flex-col space-y-8 pb-20">
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">OUR ONLINE STORE BUILDER</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">Create an online store</a>
-                                <a href="#">Pricing and plans</a>
-                                <a href="#">Online store examples</a>
-                                <a href="#">Your own domain</a>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">USEFUL TOOLS FOR YOUR STORE</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">Warning-proof legal texts</a>
-                                <a href="#">Business listings</a>
-                                <a href="#">Social media integration</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="submenu-tools" class="hidden flex-col space-y-8 pb-20">
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">MORE USEFUL TOOLS</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">Business listings</a>
-                                <a href="#">Warning-proof legal texts</a>
-                                <a href="#">Social media integration</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="submenu-knowledge" class="hidden flex-col space-y-8 pb-20">
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">EXPERTISE, TIPS AND INSPIRATION</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">All Topics</a>
-                                <a href="#">Website Tips</a>
-                                <a href="#">Success stories</a>
-                                <a href="#">Jimdo Updates</a>
-                                <a href="#">Founder stories</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="submenu-help" class="hidden flex-col space-y-8 pb-20">
-                        <div>
-                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">HOW CAN WE HELP YOU?</h4>
-                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
-                                <a href="#">Help center</a>
-                                <a href="#">Contact support</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-auto mb-12 px-8 flex flex-col space-y-4 bg-white">
-                    <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-full text-lg shadow-lg hover:bg-blue-700 transition-colors">
-                        Sign up
-                    </button>
-                    <a href="#" class="text-center font-bold text-gray-600 py-2">Log In</a>
-                </div>
-            </div>
         </nav>
 
         <header class="max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-16 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -747,6 +631,123 @@
             </div>
         </section>
 
+        <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/40 z-[998] hidden opacity-0 transition-opacity duration-300"></div>
+
+            <div id="mobile-menu" 
+                class="fixed top-0 left-0 w-80 max-w-[100%] bg-white z-[9999] -translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-8 h-screen overflow-y-auto shadow-[20px_0_30px_-15px_rgba(0,0,0,0.3)] invisible">
+
+                <div class="px-8 mb-10 flex justify-between items-center bg-white">
+                    <a href="#hero" onclick="toggleMenu()">
+                        <div class="jimdo-logo inline-block font-black text-2xl px-2 py-0.5 leading-none bg-white">JIMDO</div>
+                    </a>
+                    <button onclick="toggleMenu()" class="text-3xl text-gray-800 focus:outline-none bg-white">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div id="mobile-main-links" class="flex flex-col space-y-6 text-2xl font-bold text-[#002d62] px-8 transition-all duration-300">
+                    <button onclick="openSubmenu('website')" class="flex justify-between items-center w-full text-left">Website <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('store')" class="flex justify-between items-center w-full text-left">Online Store <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('tools')" class="flex justify-between items-center w-full text-left">Business-Tools <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    
+                    <a href="#">Community</a>
+                    
+                    <div class="py-2"></div> 
+
+                    <button onclick="openSubmenu('knowledge')" class="flex justify-between items-center w-full text-left">Knowledge Guide <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                    <button onclick="openSubmenu('help')" class="flex justify-between items-center w-full text-left">Help <i class="fa-solid fa-chevron-right text-sm"></i></button>
+                </div>
+
+                <div id="submenu-container" class="absolute top-0 left-0 w-full bg-white pt-24 px-8 -translate-x-full transition-transform duration-300 flex flex-col z-[1002] h-full overflow-y-auto">
+                    <button onclick="closeSubmenu()" class="flex items-center gap-2 text-gray-500 font-bold mb-8 text-sm uppercase tracking-widest">
+                        <i class="fa-solid fa-chevron-left"></i> Back to Main Menu
+                    </button>
+                    
+                    <div id="submenu-website" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">OUR WEBSITE BUILDER</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Create a website</a>
+                                <a href="#">Pricing and plans</a>
+                                <a href="#">Website examples</a>
+                                <a href="#">Your own domain</a>
+                                <a href="#">Founder Stories</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">USEFUL TOOLS FOR YOUR WEBSITE</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Warning-proof legal texts</a>
+                                <a href="#">Business listings</a>
+                                <a href="#">Online booking</a>
+                                <a href="#">Social media integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-store" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">OUR ONLINE STORE BUILDER</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Create an online store</a>
+                                <a href="#">Pricing and plans</a>
+                                <a href="#">Online store examples</a>
+                                <a href="#">Your own domain</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">USEFUL TOOLS FOR YOUR STORE</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Warning-proof legal texts</a>
+                                <a href="#">Business listings</a>
+                                <a href="#">Social media integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-tools" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">MORE USEFUL TOOLS</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Business listings</a>
+                                <a href="#">Warning-proof legal texts</a>
+                                <a href="#">Social media integration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-knowledge" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">EXPERTISE, TIPS AND INSPIRATION</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">All Topics</a>
+                                <a href="#">Website Tips</a>
+                                <a href="#">Success stories</a>
+                                <a href="#">Jimdo Updates</a>
+                                <a href="#">Founder stories</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="submenu-help" class="hidden flex-col space-y-8 pb-20">
+                        <div>
+                            <h4 class="text-[11px] uppercase tracking-widest text-gray-400 font-bold mb-4">HOW CAN WE HELP YOU?</h4>
+                            <div class="flex flex-col space-y-4 text-xl font-bold text-gray-900">
+                                <a href="#">Help center</a>
+                                <a href="#">Contact support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-auto mb-12 px-8 flex flex-col space-y-4 bg-white">
+                    <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-full text-lg shadow-lg hover:bg-blue-700 transition-colors">
+                        Sign up
+                    </button>
+                    <a href="#" class="text-center font-bold text-gray-600 py-2">Log In</a>
+                </div>
+            </div>
+
         <footer class="bg-white pt-16 md:pt-32 pb-16 px-8 border-t border-gray-100">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-y-12 gap-x-8 md:gap-16 pb-24">
@@ -974,59 +975,97 @@
                 const menu = document.getElementById('mobile-menu');
                 const overlay = document.getElementById('menu-overlay');
                 const body = document.body;
-                const navLogo = document.querySelector('.nav-container .jimdo-logo'); 
+                const navLogo = document.querySelector('.nav-container .jimdo-logo');
 
-                if (menu.classList.contains('-translate-x-full')) {
-                    // OPEN
-                    menu.classList.replace('-translate-x-full', 'translate-x-0');
-                    
-                    // ADD THIS LINE: This counters the -left-4 to make the menu perfectly flush with the edge
+                // Use 'invisible' as the source of truth for the closed state
+                const isClosed = menu.classList.contains('invisible') || menu.classList.contains('-translate-x-[1000px]');
+
+                if (isClosed) {
+                    // --- OPENING ---
+                    // 1. Prepare: Remove deep-hide classes and make it visible but tucked at -100%
+                    menu.style.transition = 'none';
+                    menu.classList.remove('invisible', '-translate-x-[1000px]', '-translate-x-full');
                     menu.style.left = '0px';
+                    menu.style.transform = 'translateX(-100%)';
+                    
+                    // Force the browser to acknowledge the new position (kills the gap)
+                    void menu.offsetWidth;
+
+                    // 2. Animate: Slide from -100% to 0
+                    requestAnimationFrame(() => {
+                        menu.style.transition = 'transform 0.3s ease-out';
+                        menu.style.transform = 'translateX(0px)';
+                        menu.classList.add('translate-x-0');
+                    });
 
                     overlay.classList.remove('hidden');
                     setTimeout(() => overlay.classList.add('opacity-100'), 10);
                     body.style.overflow = 'hidden';
+                    if (navLogo) navLogo.style.opacity = '0';
 
-                    if (navLogo) navLogo.style.opacity = '0'; 
                 } else {
-                    // CLOSE
-                    menu.classList.replace('translate-x-0', '-translate-x-full');
-                    
-                    // ADD THIS LINE: Put the -4px back so the shadow is hidden again
-                    menu.style.left = '-16px'; // -16px is the equivalent of -left-4
-
+                    // --- CLOSING ---
+                    menu.style.transform = 'translateX(-100%)';
                     overlay.classList.remove('opacity-100');
-                    setTimeout(() => overlay.classList.add('hidden'), 300);
+                    
+                    setTimeout(() => {
+                        overlay.classList.add('hidden', 'opacity-0');
+                        menu.classList.remove('translate-x-0');
+                        
+                        // 3. Deep Hide: Re-apply invisible and deep-offset to kill shadow peek
+                        menu.classList.add('invisible', '-translate-x-[1000px]');
+                        menu.style.left = '-100px'; 
+                        menu.style.transform = ''; 
+                        menu.style.transition = '';
+                    }, 300);
+                    
                     body.style.overflow = '';
-
                     if (navLogo) {
-                        setTimeout(() => {
-                            navLogo.style.opacity = '1';
-                        }, 300);
+                        setTimeout(() => { navLogo.style.opacity = '1'; }, 300);
                     }
                 }
             }
 
             function openSubmenu(type) {
+                // Hide all sub-sections
                 ['website', 'store', 'tools', 'knowledge', 'help'].forEach(id => {
                     const sub = document.getElementById(`submenu-${id}`);
                     sub.classList.add('hidden');
                     sub.classList.remove('flex');
                 });
                 
+                // Show selected section
                 const target = document.getElementById(`submenu-${type}`);
                 target.classList.remove('hidden');
                 target.classList.add('flex');
                 
                 const subContainer = document.getElementById('submenu-container');
-                subContainer.classList.remove('-translate-x-full');
-                subContainer.classList.add('translate-x-0');
+
+                // Teleport and slide
+                subContainer.style.transition = 'none';
+                subContainer.style.left = '0px';
+                subContainer.style.transform = 'translateX(-100%)';
+                
+                void subContainer.offsetWidth; // Force reflow
+
+                requestAnimationFrame(() => {
+                    subContainer.style.transition = 'transform 0.3s ease-out';
+                    subContainer.style.transform = 'translateX(0px)';
+                    subContainer.classList.remove('-translate-x-full');
+                    subContainer.classList.add('translate-x-0');
+                });
             }
 
             function closeSubmenu() {
                 const subContainer = document.getElementById('submenu-container');
-                subContainer.classList.remove('translate-x-0');
-                subContainer.classList.add('-translate-x-full');
+                subContainer.style.transform = 'translateX(-100%)';
+                
+                setTimeout(() => {
+                    subContainer.style.left = '-100px'; // Hide shadow
+                    subContainer.classList.remove('translate-x-0');
+                    subContainer.classList.add('-translate-x-full');
+                    subContainer.style.transform = ''; 
+                }, 300);
             }
 
             // Navbar Scroll Logic
